@@ -1,0 +1,4 @@
+# Proxy server-side pro CRM Groovia (evita bloqueio de CORS no fetch do navegador)
+/api/groovia-newsletter   https://crm.groovia.com.br/api/forms/form-landing-codigo-aberto-2   200
+/api/groovia-prevenda     https://crm.groovia.com.br/api/forms/form-pre-venda-codigo-aberto      200
+/api/groovia-curso        https://crm.groovia.com.br/api/forms/form-curso-codigo-aberto-2        200
