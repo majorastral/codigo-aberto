@@ -825,7 +825,6 @@ footer{background:var(--ink);color:var(--red);padding:60px 0 30px;}
       btn.style.color = '#fff';
       form.querySelectorAll('input,select').forEach(function(el){ el.disabled = true; });
 
-      // envia o lead pro CRM Groovia (via proxy do _redirects, evita CORS). Nao bloqueia a UI se falhar.
       fetch('/api/groovia-curso', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
