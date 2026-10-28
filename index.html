@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Código Aberto: O Jeito iFood de Trabalhar</title>
 <link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
 <meta name="description" content="Conheça Código Aberto: O Jeito iFood de Trabalhar, de Raphael Bozza: a cultura do iFood contada por dentro das decisões que a construíram.">
 <link rel="canonical" href="https://www.livrocodigoaberto.com.br/">
 <meta property="og:type" content="website">
@@ -855,6 +856,29 @@ footer{padding:30px 0 15px;}
   .imprensa-link,.imprensa-progress span{transition:none;}
 }
 
+
+/* pesquisa "Cultura na Prática" (institucional) */
+.pesquisa-section .section-title{color:var(--white);}
+.pesquisa-section .section-desc{color:rgba(255,255,255,.9);}
+.pesquisa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px 20px;list-style:none;margin:0 0 40px;padding:0;}
+.pesquisa-card{position:relative;background:var(--white);border-radius:var(--radius-m);padding:28px 22px 24px;box-shadow:0 14px 28px rgba(60,0,6,.22);}
+.pesquisa-card::before{content:"";position:absolute;top:-12px;left:50%;margin-left:-32px;width:64px;height:26px;background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.05);box-shadow:0 2px 4px rgba(0,0,0,.1);transform:rotate(-3deg);}
+.pesquisa-card:nth-child(even)::before{transform:rotate(3deg);}
+.pesquisa-card-dark{background:var(--ink);}
+.pesquisa-card-dark .pesquisa-num{color:var(--white);}
+.pesquisa-card-dark .pesquisa-label{color:rgba(255,255,255,.78);}
+.pesquisa-num{font-family:'Anton',sans-serif;font-size:52px;line-height:1;color:var(--red);}
+.pesquisa-label{margin-top:12px;font-size:15px;line-height:1.45;color:var(--ink-soft);}
+.pesquisa-note{margin:0 0 44px;font-size:13px;line-height:1.55;color:#ffcfc9;max-width:760px;}
+.pesquisa-quote{position:relative;margin:0;max-width:820px;color:var(--ink);border-radius:2px;padding:44px 48px 36px;box-shadow:0 26px 50px rgba(60,0,6,.4), 0 3px 0 rgba(0,0,0,.2);}
+.pesquisa-quote::before{content:"";position:absolute;top:-14px;left:44px;width:64px;height:28px;background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.05);box-shadow:0 2px 4px rgba(0,0,0,.1);transform:rotate(-4deg);}
+.pesquisa-quote-mark{display:block;font-family:'Anton',sans-serif;font-size:64px;line-height:.5;color:var(--red);margin-bottom:10px;}
+.pesquisa-quote p{margin:0;font-size:clamp(20px,2.4vw,26px);line-height:1.45;font-weight:600;}
+.pesquisa-quote cite{display:block;margin-top:20px;font-style:normal;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);}
+.pesquisa-cta{margin-top:48px;}
+@media (max-width:920px){.pesquisa-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.pesquisa-quote{padding:36px 26px 28px;}.pesquisa-quote::before{left:26px;}}
+@media (max-width:480px){.pesquisa-grid{grid-template-columns:1fr;}.pesquisa-cta .btn{width:100%;white-space:normal;text-align:center;}}
 </style>
 </head>
 <body>
@@ -905,7 +929,7 @@ footer{padding:30px 0 15px;}
         <div class="stat-label">Clientes</div>
       </div>
       <div class="stat">
-        <div class="stat-num">180M</div>
+        <div class="stat-num">200M</div>
         <div class="stat-label">Pedidos por mês</div>
       </div>
       <div class="stat">
@@ -1065,14 +1089,40 @@ footer{padding:30px 0 15px;}
     <div class="imprensa-carousel reveal">
       <ul class="imprensa-track" id="imprensaTrack" role="list" aria-label="Matérias publicadas na imprensa">
       <li class="imprensa-card">
-        <a class="imprensa-link" href="https://forbes.com.br/forbes-tech/2026/09/lideres-uso-ia-empresas-pesquisa-ifood/" target="_blank" rel="noopener noreferrer">
+        <a class="imprensa-link" href="https://iabrasilnoticias.com.br/ifood-ja-tem-12-mil-agentes-de-ia-ativos-e-planeja-ampliar-uso-em-sua-operacao/" target="_blank" rel="noopener noreferrer">
           <div class="imprensa-thumb">
-            <span class="imprensa-cover" aria-hidden="true">Forbes</span>
-            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
+            <span class="imprensa-cover" aria-hidden="true">IA Brasil</span>
+            <img src="https://images.unsplash.com/photo-1677442135136-760c813028c0?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
           </div>
           <div class="imprensa-body">
-            <div class="imprensa-meta"><span class="imprensa-outlet">Forbes Brasil</span><span>29 set 2026</span></div>
-            <h3 class="imprensa-title">Profissionais se sentem mais prontos para IA do que empresas, diz pesquisa do iFood e QualiBest</h3>
+            <div class="imprensa-meta"><span class="imprensa-outlet">IA Brasil Notícias</span></div>
+            <h3 class="imprensa-title">iFood já tem 12 mil agentes de IA ativos e planeja levar tecnologia a mais tarefas</h3>
+            <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
+          </div>
+        </a>
+      </li>
+      <li class="imprensa-card">
+        <a class="imprensa-link" href="https://tedrh.com.br/noticia/cultura-forte-gera-resultado-mas-cede-sob-pressao-corporativa" target="_blank" rel="noopener noreferrer">
+          <div class="imprensa-thumb">
+            <span class="imprensa-cover" aria-hidden="true">Ted RH</span>
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
+          </div>
+          <div class="imprensa-body">
+            <div class="imprensa-meta"><span class="imprensa-outlet">Ted RH</span></div>
+            <h3 class="imprensa-title">Cultura forte gera resultado mas cede sob pressão corporativa</h3>
+            <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
+          </div>
+        </a>
+      </li>
+      <li class="imprensa-card">
+        <a class="imprensa-link" href="https://inforchannel.com.br/2026/10/08/70-dos-lideres-esperam-ser-cobrados-pelo-uso-de-ia-nas-equipes-mas-so-25-se-sentem-muito-preparados/" target="_blank" rel="noopener noreferrer">
+          <div class="imprensa-thumb">
+            <span class="imprensa-cover" aria-hidden="true">Inforchannel</span>
+            <img src="https://images.unsplash.com/photo-1737644467636-6b0053476bb2?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
+          </div>
+          <div class="imprensa-body">
+            <div class="imprensa-meta"><span class="imprensa-outlet">Inforchannel</span></div>
+            <h3 class="imprensa-title">Pesquisa aponta que líderes ainda não se sentem preparados para a transformação que a IA traz</h3>
             <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
           </div>
         </a>
@@ -1091,6 +1141,19 @@ footer{padding:30px 0 15px;}
         </a>
       </li>
       <li class="imprensa-card">
+        <a class="imprensa-link" href="https://tiinside.com.br/06/10/2026/70-dos-lideres-esperam-ser-cobrados-pelo-uso-de-ia-nas-equipes-mas-so-25-se-sentem-muito-preparados/" target="_blank" rel="noopener noreferrer">
+          <div class="imprensa-thumb">
+            <span class="imprensa-cover" aria-hidden="true">TI Inside</span>
+            <img src="https://images.unsplash.com/photo-1709120395858-92f1c7c577f5?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
+          </div>
+          <div class="imprensa-body">
+            <div class="imprensa-meta"><span class="imprensa-outlet">TI Inside</span></div>
+            <h3 class="imprensa-title">70% dos líderes esperam ser cobrados pelo uso de IA nas equipes, mas só 25% se sentem muito preparados</h3>
+            <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
+          </div>
+        </a>
+      </li>
+      <li class="imprensa-card">
         <a class="imprensa-link" href="https://www.estadao.com.br/einvestidor/ana-paula-hornos/uma-empresa-pode-dar-lucro-e-destruir-valor-quando-bater-a-meta-pode-custar-caro/" target="_blank" rel="noopener noreferrer">
           <div class="imprensa-thumb">
             <span class="imprensa-cover" aria-hidden="true">Estadão</span>
@@ -1104,13 +1167,26 @@ footer{padding:30px 0 15px;}
         </a>
       </li>
       <li class="imprensa-card">
+        <a class="imprensa-link" href="https://economia.uol.com.br/colunas/aline-sordili/2026/10/01/empresas-incentivam-uso-da-ia-sem-fornecer-ferramentas-revela-pesquisa.htm" target="_blank" rel="noopener noreferrer">
+          <div class="imprensa-thumb">
+            <span class="imprensa-cover" aria-hidden="true">UOL</span>
+            <img src="https://images.unsplash.com/photo-1758598304969-6942c79a26af?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
+          </div>
+          <div class="imprensa-body">
+            <div class="imprensa-meta"><span class="imprensa-outlet">UOL</span></div>
+            <h3 class="imprensa-title">Empresas incentivam uso da IA sem fornecer ferramentas, revela pesquisa</h3>
+            <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
+          </div>
+        </a>
+      </li>
+      <li class="imprensa-card">
         <a class="imprensa-link" href="https://startups.com.br/negocios/por-dentro-do-ifood-como-cultura-e-pessoas-sustentam-o-crescimento/" target="_blank" rel="noopener noreferrer">
           <div class="imprensa-thumb">
             <span class="imprensa-cover" aria-hidden="true">Startups</span>
             <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
           </div>
           <div class="imprensa-body">
-            <div class="imprensa-meta"><span class="imprensa-outlet">Startups</span><span>30 set 2026</span></div>
+            <div class="imprensa-meta"><span class="imprensa-outlet">Startups</span></div>
             <h3 class="imprensa-title">Por dentro do iFood: como cultura e pessoas sustentam o crescimento</h3>
             <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
           </div>
@@ -1123,7 +1199,7 @@ footer{padding:30px 0 15px;}
             <img src="https://images.unsplash.com/photo-1758611971935-331135af686d?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
           </div>
           <div class="imprensa-body">
-            <div class="imprensa-meta"><span class="imprensa-outlet">InfoMoney</span><span>30 set 2026</span></div>
+            <div class="imprensa-meta"><span class="imprensa-outlet">InfoMoney</span></div>
             <h3 class="imprensa-title">Quando a meta aperta, a cultura é a primeira a ceder, mostra pesquisa</h3>
             <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
           </div>
@@ -1143,14 +1219,27 @@ footer{padding:30px 0 15px;}
         </a>
       </li>
       <li class="imprensa-card">
-        <a class="imprensa-link" href="https://economia.uol.com.br/colunas/aline-sordili/2026/10/01/empresas-incentivam-uso-da-ia-sem-fornecer-ferramentas-revela-pesquisa.htm" target="_blank" rel="noopener noreferrer">
+        <a class="imprensa-link" href="https://www.spacemoney.com.br/carreiras/cultura-organizacional-sob-pressao-por-metas/" target="_blank" rel="noopener noreferrer">
           <div class="imprensa-thumb">
-            <span class="imprensa-cover" aria-hidden="true">UOL</span>
-            <img src="https://images.unsplash.com/photo-1758598304969-6942c79a26af?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
+            <span class="imprensa-cover" aria-hidden="true">Space Money</span>
+            <img src="https://images.unsplash.com/photo-1630487656049-6db93a53a7e9?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
           </div>
           <div class="imprensa-body">
-            <div class="imprensa-meta"><span class="imprensa-outlet">UOL</span><span>1 out 2026</span></div>
-            <h3 class="imprensa-title">Empresas incentivam uso da IA sem fornecer ferramentas, revela pesquisa</h3>
+            <div class="imprensa-meta"><span class="imprensa-outlet">Space Money</span></div>
+            <h3 class="imprensa-title">Cultura cede primeiro quando a meta aperta, mostra estudo</h3>
+            <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
+          </div>
+        </a>
+      </li>
+      <li class="imprensa-card">
+        <a class="imprensa-link" href="https://forbes.com.br/forbes-tech/2026/09/lideres-uso-ia-empresas-pesquisa-ifood/" target="_blank" rel="noopener noreferrer">
+          <div class="imprensa-thumb">
+            <span class="imprensa-cover" aria-hidden="true">Forbes</span>
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
+          </div>
+          <div class="imprensa-body">
+            <div class="imprensa-meta"><span class="imprensa-outlet">Forbes Brasil</span></div>
+            <h3 class="imprensa-title">Profissionais se sentem mais prontos para IA do que empresas, diz pesquisa do iFood e QualiBest</h3>
             <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
           </div>
         </a>
@@ -1162,7 +1251,7 @@ footer{padding:30px 0 15px;}
             <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
           </div>
           <div class="imprensa-body">
-            <div class="imprensa-meta"><span class="imprensa-outlet">Folha de S.Paulo</span><span>set 2026</span></div>
+            <div class="imprensa-meta"><span class="imprensa-outlet">Folha de S.Paulo</span></div>
             <h3 class="imprensa-title">Estudo mostra que cultura da empresa cede sob pressão por metas</h3>
             <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
           </div>
@@ -1175,8 +1264,21 @@ footer{padding:30px 0 15px;}
             <img src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
           </div>
           <div class="imprensa-body">
-            <div class="imprensa-meta"><span class="imprensa-outlet">g1</span><span>29 set 2026</span></div>
+            <div class="imprensa-meta"><span class="imprensa-outlet">g1</span></div>
             <h3 class="imprensa-title">Cultura organizacional nas empresas: pesquisa do iFood e QualiBest</h3>
+            <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
+          </div>
+        </a>
+      </li>
+      <li class="imprensa-card">
+        <a class="imprensa-link" href="https://revistapegn.globo.com/google/amp/empreendedorismo/noticia/2026/09/bienal-do-livro-sp-2026-8-livros-de-negocios-e-empreendedorismo-que-serao-lancados-no-evento.ghtml" target="_blank" rel="noopener noreferrer">
+          <div class="imprensa-thumb">
+            <span class="imprensa-cover" aria-hidden="true">PEGN</span>
+            <img src="https://images.unsplash.com/photo-1737205787828-c85e95186aa7?auto=format&fit=crop&w=800&h=450&q=70" width="800" height="450" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove();">
+          </div>
+          <div class="imprensa-body">
+            <div class="imprensa-meta"><span class="imprensa-outlet">PEGN</span></div>
+            <h3 class="imprensa-title">iFood transforma sua cultura em livro e revela bastidores da gestão durante a Bienal de São Paulo</h3>
             <span class="imprensa-cta">Ler matéria ↗<span class="sr-only"> (abre em nova aba)</span></span>
           </div>
         </a>
@@ -1193,6 +1295,33 @@ footer{padding:30px 0 15px;}
   </div>
 </section>
 
+
+<section class="section section-red pesquisa-section" id="pesquisa" aria-labelledby="pesquisaTitle">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow section-eyebrow">Pesquisa</div>
+      <h2 class="section-title" id="pesquisaTitle">Cultura na Prática</h2>
+      <div class="section-desc">
+        <p>O que acontece com a cultura declarada quando ela encontra a meta, o corte, a promoção e a contratação. Pesquisa do iFood com o Instituto QualiBest, com 1.406 profissionais de todo o país.</p>
+      </div>
+    </div>
+    <ul class="pesquisa-grid reveal" role="list">
+      <li class="pesquisa-card"><div class="pesquisa-num">89%</div><p class="pesquisa-label">concordam que empresas com cultura forte alcançam melhores resultados</p></li>
+      <li class="pesquisa-card pesquisa-card-dark"><div class="pesquisa-num">58%</div><p class="pesquisa-label">dizem que a cultura é a primeira a ceder quando a meta aperta</p></li>
+      <li class="pesquisa-card"><div class="pesquisa-num">41%</div><p class="pesquisa-label">dos líderes admitem que renunciam a pontos da cultura para atingir metas</p></li>
+      <li class="pesquisa-card"><div class="pesquisa-num">79%</div><p class="pesquisa-label">dizem que conhecer a cultura de uma empresa influencia uma decisão de carreira</p></li>
+    </ul>
+    <p class="pesquisa-note reveal">Pesquisa quantitativa online realizada pelo Instituto QualiBest para o iFood, com 1.406 entrevistas entre 13 e 17 de julho de 2026. Margem de erro de 2,6 pontos percentuais, com 95% de confiança.</p>
+    <blockquote class="pesquisa-quote quote-section reveal">
+      <span class="pesquisa-quote-mark" aria-hidden="true">“</span>
+      <p>Cultura não se prova quando tudo vai bem. Ela se revela quando a pressão aumenta e a empresa precisa decidir do que não abre mão.</p>
+      <cite><strong>Raphael Bozza</strong>, sócio e VP de Pessoas do iFood</cite>
+    </blockquote>
+    <div class="pesquisa-cta reveal">
+      <a class="btn btn-ink-on-red" href="assets/pesquisa-cultura-na-pratica.pdf" download>Baixar a pesquisa completa em PDF</a>
+    </div>
+  </div>
+</section>
 
 <section class="section bg-cream2">
   <div class="wrap proximas-grid">
