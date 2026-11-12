@@ -883,38 +883,27 @@ footer{padding:30px 0 15px;}
 @media (max-width:640px){.pesquisa-quote{padding:36px 26px 28px;}.pesquisa-quote::before{left:26px;}}
 @media (max-width:480px){.pesquisa-grid{grid-template-columns:1fr;}.pesquisa-cta .btn{width:100%;white-space:normal;text-align:center;}}
 
-/* Histórias de quem faz acontecer */
-.hist-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 26px;align-items:start;}
-@media (max-width:980px){.hist-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
-@media (max-width:640px){.hist-grid{grid-template-columns:1fr;gap:44px;}}
-.hist-card{position:relative;background:var(--white);border-radius:var(--radius-m);padding:14px 14px 24px;box-shadow:0 14px 28px rgba(33,20,14,.14);}
-.hist-card::before{
-  content:"";position:absolute;top:-14px;left:50%;margin-left:-32px;
-  width:64px;height:28px;
-  background:rgba(255,255,255,.6);
-  border:1px solid rgba(0,0,0,.05);
-  box-shadow:0 2px 4px rgba(0,0,0,.1);
-  transform:rotate(-3deg);
-}
-.hist-card:nth-child(even)::before{transform:rotate(3deg);}
-.hist-photo{margin:0 0 16px;aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:var(--cream-2);}
+/* Histórias de quem faz acontecer (carrossel, cards do mesmo tamanho) */
+.hist-card{flex-basis:calc((100% - 44px) / 3);}
+.hist-box{display:flex;flex-direction:column;width:100%;background:var(--white);border:1px solid var(--paper-line);border-radius:var(--radius-m);padding:14px 14px 20px;box-shadow:0 10px 24px rgba(33,20,14,.10);}
+.hist-photo{margin:0 0 14px;aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:var(--cream-2);flex:none;}
 .hist-photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;}
 .hist-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:72px;letter-spacing:.04em;color:#85755a;}
-.hist-who{display:flex;flex-direction:column;gap:2px;margin-bottom:10px;padding:0 6px;}
+.hist-who{display:flex;flex-direction:column;gap:2px;margin-bottom:8px;padding:0 6px;}
 .hist-name{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px;color:var(--ink);}
 .hist-area{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red-deep);}
-.hist-title{font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;line-height:1.25;color:var(--ink);margin:0 6px 12px;}
-.hist-text{padding:0 6px;font-size:16px;line-height:1.6;color:var(--ink-soft);}
-.hist-text p{margin:0 0 12px;}
-.hist-more summary{list-style:none;cursor:pointer;display:inline-block;margin-top:2px;font-weight:700;font-size:15px;color:var(--red-deep);text-decoration:underline;text-underline-offset:3px;}
-.hist-more summary::-webkit-details-marker{display:none;}
-.hist-more summary:hover{color:var(--ink);}
-.hist-more summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px;}
-.hist-close{display:none;}
-.hist-more[open] .hist-open{display:none;}
-.hist-more[open] .hist-close{display:inline;}
-.hist-more[open] summary{margin-top:6px;}
-.hist-more > p:first-of-type{margin-top:0;}
+.hist-title{font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;line-height:1.25;color:var(--ink);margin:0 6px 10px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(1.25em * 3);}
+.hist-teaser{margin:0 6px 14px;font-size:15px;line-height:1.55;color:var(--ink-soft);display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;}
+.hist-read{margin:auto 6px 0;align-self:flex-start;background:none;border:none;padding:0;cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;color:var(--red-deep);text-decoration:underline;text-underline-offset:3px;}
+.hist-read:hover{color:var(--ink);}
+.hist-read:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px;}
+.legal-modal .section-eyebrow{color:var(--red-deep);}
+.story-name{margin:0 0 14px;font-size:15px;font-weight:700;color:var(--ink-soft);}
+.story-body{max-height:60vh;font-size:16px;line-height:1.65;}
+.story-body p{margin-bottom:14px;}
+@media (max-width:900px){.hist-card{flex-basis:calc((100% - 22px) / 2);}}
+@media (max-width:640px){.hist-card{flex-basis:82%;}}
+.hist-carousel .imprensa-track{padding-top:26px;}
 
 /* Contraste (WCAG AA): vermelho escuro em texto pequeno sobre fundo claro, branco sobre o vermelho */
 .section-eyebrow,.eyebrow{color:var(--red-deep);}
@@ -932,7 +921,8 @@ footer .footer-link:hover{color:var(--white);}
 .faq-a-inner p{margin:0 0 12px;}
 .faq-a-inner p:last-child{margin-bottom:0;}
 .faq-books{margin:0;padding:0 0 0 20px;}
-.faq-books li{margin:0 0 10px;}
+.faq-books li{margin:0 0 12px;}
+.faq-books em{font-style:normal;font-weight:700;color:var(--ink);}
 .faq-a-inner a{color:var(--red-deep);text-decoration:underline;text-underline-offset:3px;}
 .imprensa-group{margin-top:34px;}
 .imprensa-group:first-of-type{margin-top:0;}
@@ -1174,20 +1164,6 @@ footer .footer-link:hover{color:var(--white);}
 <section class="section bg-cream2">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow section-eyebrow">Uma cena do livro</div>
-    </div>
-    <div class="scene-card reveal">
-      <h3>O foguete que não decolou</h3>
-      <p>O iFood Econômico avançava como uma aposta da empresa. Um foguete inflável já estava pronto para apresentá-la às lideranças quando a mudança no cenário de juros alterou a conta do projeto. A decisão foi interrompê-lo, e o foguete foi esvaziado antes da apresentação.</p>
-      <p>O episódio está no livro porque mostra uma parte difícil da gestão: reconhecer que uma ideia testada com dedicação já não faz sentido e decidir o que fazer com o trabalho, o aprendizado e as pessoas que estavam nela.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal">
       <div class="eyebrow section-eyebrow">O que o leitor encontra</div>
       <h2 class="section-title">O jeito iFood de trabalhar em situações reais</h2>
     </div>
@@ -1216,7 +1192,7 @@ footer .footer-link:hover{color:var(--white);}
   </div>
 </section>
 
-<section class="section bg-cream2" id="historias" aria-labelledby="historiasTitle">
+<section class="section" id="historias" aria-labelledby="historiasTitle">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow section-eyebrow">Histórias</div>
@@ -1226,160 +1202,148 @@ footer .footer-link:hover{color:var(--white);}
         <p>Ao longo de 15 anos, o Jeito iFood de Trabalhar foi construído e vivido por milhares de FoodLovers. Estas são algumas das histórias que mostram o que essa cultura significa na prática.</p>
       </div>
     </div>
-    <ul class="hist-grid">
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 01: trocar o bloco hist-ph por <img src="..." alt="Brena Ribeiro" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">BR</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Brena Ribeiro</span><span class="hist-area">GenPlat</span></div>
-        <h3 class="hist-title">Pela primeira vez, ela se viu pertencendo àquele lugar</h3>
-        <div class="hist-text">
-          <p>Brena chegou ao processo seletivo do Programa de Estágio GenAI, em 2025, com uma trajetória construída entre livros, tecnologia e pesquisa em inteligência artificial. Mas também carregava anos de experiências em ambientes nos quais sentia que precisava provar constantemente sua capacidade.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>Durante a seleção, algo chamou sua atenção: encontrou mulheres com trajetórias parecidas com a sua, ocupando naturalmente aquele espaço. Era uma experiência de pertencimento que ela ainda não havia vivido na tecnologia.</p><p>No iFood, encontrou a possibilidade de continuar pesquisando enquanto construía sua carreira profissional, sem precisar escolher entre os dois caminhos.</p><p>Hoje, guarda uma imagem especial: seus pais apontando para a televisão quando aparece a marca do iFood, orgulhosos de ver a filha trabalhando ali.</p><p>Para Brena, aquela oportunidade significou também reconhecer que podia ocupar espaços que, durante muito tempo, pareceram distantes demais.</p>
-          </details>
+    <div class="imprensa-carousel hist-carousel reveal">
+      <ul class="imprensa-track" role="list" aria-label="Histórias de FoodLovers">
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 01: trocar o bloco hist-ph por <img src="..." alt="Brena Ribeiro" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">BR</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Brena Ribeiro</span><span class="hist-area">GenPlat</span></div>
+            <h3 class="hist-title">Pela primeira vez, ela se viu pertencendo àquele lugar</h3>
+            <p class="hist-teaser">Brena chegou ao processo seletivo do Programa de Estágio GenAI, em 2025, com uma trajetória construída entre livros, tecnologia e pesquisa em inteligência artificial. Mas também carregava anos de experiências em ambientes nos quais sentia que precisava provar constantemente sua capacidade.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Brena Ribeiro</span></button>
+            <div class="hist-full" hidden><p>Brena chegou ao processo seletivo do Programa de Estágio GenAI, em 2025, com uma trajetória construída entre livros, tecnologia e pesquisa em inteligência artificial. Mas também carregava anos de experiências em ambientes nos quais sentia que precisava provar constantemente sua capacidade.</p><p>Durante a seleção, algo chamou sua atenção: encontrou mulheres com trajetórias parecidas com a sua, ocupando naturalmente aquele espaço. Era uma experiência de pertencimento que ela ainda não havia vivido na tecnologia.</p><p>No iFood, encontrou a possibilidade de continuar pesquisando enquanto construía sua carreira profissional, sem precisar escolher entre os dois caminhos.</p><p>Hoje, guarda uma imagem especial: seus pais apontando para a televisão quando aparece a marca do iFood, orgulhosos de ver a filha trabalhando ali.</p><p>Para Brena, aquela oportunidade significou também reconhecer que podia ocupar espaços que, durante muito tempo, pareceram distantes demais.</p></div>
+          </div>
+        </li>
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 02: trocar o bloco hist-ph por <img src="..." alt="Cínthia Galvão" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">CG</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Cínthia Galvão</span><span class="hist-area">Tech/Logística</span></div>
+            <h3 class="hist-title">A primeira mulher promovida à liderança foi um marco</h3>
+            <p class="hist-teaser">Quando Cínthia chegou ao iFood, em 2019, não havia mulheres na liderança de engenharia da área em que começou a trabalhar.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Cínthia Galvão</span></button>
+            <div class="hist-full" hidden><p>Quando Cínthia chegou ao iFood, em 2019, não havia mulheres na liderança de engenharia da área em que começou a trabalhar.</p><p>Algum tempo depois, decidiu fazer algo para mudar aquele cenário. Passou a estudar os desafios enfrentados por mulheres na tecnologia, aprofundou-se em temas como síndrome da impostora e começou a mentorar desenvolvedoras que queriam assumir posições de liderança.</p><p>Também levou essas discussões para encontros internos. Mas foi a promoção da primeira profissional que acompanhou que marcou sua trajetória.</p><p>Hoje, ao ver mais mulheres em posições de liderança e iniciativas como o Elas são Tech, Cínthia reconhece o avanço de um movimento do qual decidiu participar ativamente. Uma transformação que começou com pessoas ajudando outras pessoas a crescer.</p></div>
+          </div>
+        </li>
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 03: trocar o bloco hist-ph por <img src="..." alt="Fernanda Souza" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">FS</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Fernanda Souza</span><span class="hist-area">Ads</span></div>
+            <h3 class="hist-title">O projeto acabou. A oportunidade de continuar fez toda a diferença.</h3>
+            <p class="hist-teaser">Fernanda entrou no iFood em 2019, como atendente do Loop. Vinha de uma trajetória profissional no atendimento e nunca havia imaginado trabalhar com marketing.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Fernanda Souza</span></button>
+            <div class="hist-full" hidden><p>Fernanda entrou no iFood em 2019, como atendente do Loop. Vinha de uma trajetória profissional no atendimento e nunca havia imaginado trabalhar com marketing.</p><p>Quando o Loop foi encerrado, em plena pandemia, surgiu a possibilidade de participar de processos seletivos internos. Ela tentou outras áreas, recebeu respostas negativas e, quando seu desligamento já estava previsto, conseguiu uma vaga temporária no marketing do iFood Shop.</p><p>Precisou aprender praticamente tudo do zero. A oportunidade temporária foi estendida e, em março de 2021, recebeu a notícia da efetivação. Vieram promoções, novos desafios e, anos depois, outra mudança: com o encerramento do negócio em que trabalhava, passou por mais um processo seletivo interno e chegou à área de Ads.</p><p>Ao longo dessa trajetória, concluiu dois cursos superiores, conquistou seu apartamento e pôde continuar ajudando a mãe.</p><p>Para Fernanda, as oportunidades de recomeçar dentro da empresa mudaram também o que ela passou a considerar possível para a própria vida.</p></div>
+          </div>
+        </li>
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 04: trocar o bloco hist-ph por <img src="..." alt="Filipe Panceri" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">FP</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Filipe Panceri</span><span class="hist-area">iFood Pago</span></div>
+            <h3 class="hist-title">Ele não entendia de meios de pagamento. Recebeu o desafio mesmo assim.</h3>
+            <p class="hist-teaser">Em 2023, dois dias antes de sair de férias, Filipe recebeu um novo desafio de seu líder: ajudar a construir uma solução de pagamentos para o iFood.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Filipe Panceri</span></button>
+            <div class="hist-full" hidden><p>Em 2023, dois dias antes de sair de férias, Filipe recebeu um novo desafio de seu líder: ajudar a construir uma solução de pagamentos para o iFood.</p><p>Filipe não conhecia aquele mercado e deixou isso claro. Mas o líder queria justamente alguém que pudesse olhar para o problema sem ideias preconcebidas.</p><p>A equipe começou com seis ou sete pessoas, testando a solução no restaurante da mãe de uma colega. Todos participavam de tudo: acompanhavam transações, realizavam repasses manualmente e conversavam com clientes para entender o que funcionava e o que precisava melhorar.</p><p>A solução começou a ser testada em um restaurante. Depois, chegou a três, dez e, ao fim do primeiro ciclo, já estava presente em quase cem estabelecimentos. Essa experiência ajudou a construir a Maquinona.</p><p>Hoje, Filipe sente uma satisfação especial quando encontra o produto em funcionamento e pode mostrar às filhas algo que ajudou a criar.</p><p>Tudo começou com a confiança para assumir um desafio em um mercado que ele ainda precisava conhecer.</p></div>
+          </div>
+        </li>
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 05: trocar o bloco hist-ph por <img src="..." alt="Iara Barros" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">IB</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Iara Barros</span><span class="hist-area">Novos Negócios</span></div>
+            <h3 class="hist-title">Seis anos depois, uma restauranteira ainda usava o que havia aprendido</h3>
+            <p class="hist-teaser">Em julho de 2025, Iara recebeu uma mensagem inesperada de uma restauranteira. A parceira havia encontrado e-mails antigos e queria agradecer pelas orientações recebidas no início de sua operação.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Iara Barros</span></button>
+            <div class="hist-full" hidden><p>Em julho de 2025, Iara recebeu uma mensagem inesperada de uma restauranteira. A parceira havia encontrado e-mails antigos e queria agradecer pelas orientações recebidas no início de sua operação.</p><p>O restaurante tinha mudado de uma hamburgueria para um negócio focado em refeições, mas continuava usando os ensinamentos daquela época.</p><p>Curiosa, Iara procurou os registros e descobriu que a consultoria havia acontecido em 2019, seu primeiro ano no iFood, quando ela própria ainda estava aprendendo.</p><p>A mensagem reforçou algo que sempre procurou fazer nas conversas com parceiros: explicar os motivos por trás de cada orientação, para que o conhecimento pudesse ser adaptado a novas situações.</p><p>Seis anos depois, ela descobriu que uma conversa aparentemente comum continuava ajudando alguém a tocar seu negócio. Foi um dos retornos mais significativos que recebeu sobre seu trabalho.</p></div>
+          </div>
+        </li>
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 06: trocar o bloco hist-ph por <img src="..." alt="Jennifer Siqueira" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">JS</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Jennifer Siqueira</span><span class="hist-area">Comercial</span></div>
+            <h3 class="hist-title">No começo, ela precisava convencer os restaurantes a não desligarem a maquininha</h3>
+            <p class="hist-teaser">Quando Jennifer entrou no iFood, em 2012, pedir comida pela internet ainda era uma novidade para muitos restaurantes de Recife.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Jennifer Siqueira</span></button>
+            <div class="hist-full" hidden><p>Quando Jennifer entrou no iFood, em 2012, pedir comida pela internet ainda era uma novidade para muitos restaurantes de Recife.</p><p>Os estabelecimentos recebiam os pedidos por uma maquininha que precisava permanecer ligada. O problema é que alguns proprietários não acreditavam que os pedidos digitais realmente chegariam e desligavam o equipamento da tomada.</p><p>Jennifer visitava os parceiros, conversava, explicava como funcionava e, muitas vezes, ela mesma ligava a maquininha.</p><p>Mais tarde, participou da expansão do iFood para novas cidades. Em Fortaleza, encontrou uma solução prática para acelerar o trabalho: contratou um motoboy que conhecia os restaurantes e seus proprietários para ajudá-la a chegar às pessoas certas.</p><p>Jennifer acompanhou uma transformação que exigiu muito mais do que tecnologia. Foi preciso conquistar a confiança dos parceiros, um restaurante de cada vez.</p></div>
+          </div>
+        </li>
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 07: trocar o bloco hist-ph por <img src="..." alt="Lívia Ribeiro" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">LR</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Lívia Ribeiro</span><span class="hist-area">Impacto &amp; Sustentabilidade</span></div>
+            <h3 class="hist-title">Na primeira semana, o líder perguntou quais eram suas metas pessoais</h3>
+            <p class="hist-teaser">Lívia chegou ao iFood em dezembro de 2021, depois de uma experiência profissional desgastante. Estava cansada e havia decidido que, no novo emprego, evitaria assumir grandes projetos.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Lívia Ribeiro</span></button>
+            <div class="hist-full" hidden><p>Lívia chegou ao iFood em dezembro de 2021, depois de uma experiência profissional desgastante. Estava cansada e havia decidido que, no novo emprego, evitaria assumir grandes projetos.</p><p>Mas, logo na primeira semana, participou com seu time de uma conversa para construir o PTO, o acordo de trabalho da equipe.</p><p>A primeira pergunta do líder não foi sobre metas corporativas. Ele queria saber quais eram as metas pessoais de cada um.</p><p>Aquela conversa marcou Lívia. Encontrou um ambiente de confiança, autonomia e respeito à vida pessoal que a fez recuperar o entusiasmo pelo trabalho.</p><p>Na operação logística, essa confiança também a levou para além dos indicadores. Em Brasília, participou da inauguração de um hub e de ações com entregadores. Em Goiânia, coordenou uma campanha de vacinação.</p><p>Ao conhecer de perto as pessoas por trás dos números, ampliou sua compreensão do negócio.</p><p>Uma experiência que começou com um acordo de trabalho e se fortaleceu na autonomia para assumir responsabilidades e viver a operação de perto.</p></div>
+          </div>
+        </li>
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 08: trocar o bloco hist-ph por <img src="..." alt="Luis Jorge" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">LJ</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Luis Jorge</span><span class="hist-area">Fraud Prevention</span></div>
+            <h3 class="hist-title">A operação estava em crise. Ninguém começou procurando um culpado.</h3>
+            <p class="hist-teaser">Era uma sexta-feira de março, às vésperas de um fim de semana importante para a operação logística. Uma falha externa na engenharia de dados havia comprometido as informações utilizadas para configurar rotas de um grande parceiro, provocando atrasos e custos maiores.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Luis Jorge</span></button>
+            <div class="hist-full" hidden><p>Era uma sexta-feira de março, às vésperas de um fim de semana importante para a operação logística. Uma falha externa na engenharia de dados havia comprometido as informações utilizadas para configurar rotas de um grande parceiro, provocando atrasos e custos maiores.</p><p>Luis havia acabado de entrar no iFood como analista júnior. Quando foi convocado para uma reunião de crise, imaginou que encontraria cobranças duras e uma busca por responsáveis.</p><p>Aconteceu o contrário.</p><p>A equipe se concentrou em entender a falha e encontrar uma maneira de manter a operação funcionando. O colega responsável pelas planilhas, longe de ser afastado da discussão, assumiu um papel central na solução.</p><p>Naquela noite, conseguiram recuperar uma configuração anterior que permitiu conter os danos. Na segunda-feira, começaram a trabalhar na automatização daquele processo manual para reduzir sua vulnerabilidade.</p><p>Para Luis, aquela sexta-feira foi decisiva. Ele percebeu que poderia expor problemas com transparência, assumir responsabilidades e aprender com os erros sem receio de ser humilhado. Foi naquele momento que teve certeza de estar no lugar certo.</p></div>
+          </div>
+        </li>
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 09: trocar o bloco hist-ph por <img src="..." alt="Marina Ceriliani" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">MC</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Marina Ceriliani</span><span class="hist-area">People</span></div>
+            <h3 class="hist-title">No primeiro dia, recebeu um livro e um desafio</h3>
+            <p class="hist-teaser">Em junho de 2022, no dia em que começou a trabalhar no iFood, Marina recebeu da gestora um exemplar de <em>Care to Dare</em>, indicado pelo cliente que sua equipe atenderia. Junto com o livro, veio um desafio: pensar como seus conceitos poderiam ser aplicados na prática.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Marina Ceriliani</span></button>
+            <div class="hist-full" hidden><p>Em junho de 2022, no dia em que começou a trabalhar no iFood, Marina recebeu da gestora um exemplar de <em>Care to Dare</em>, indicado pelo cliente que sua equipe atenderia. Junto com o livro, veio um desafio: pensar como seus conceitos poderiam ser aplicados na prática.</p><p>Ela levou a proposta adiante. Ao longo do ano seguinte, trabalhou em parceria com as equipes de People, Tech e gestores para transformar aquelas ideias em uma proposta de desenvolvimento de líderes.</p><p>O trabalho começou nas áreas de Finanças e Jurídico, onde houve melhorias nas avaliações de liderança. Depois de consolidada, a iniciativa foi ampliada para o iFood e contribuiu para a construção das definições do Líder iFood.</p><p>O que começou com um desafio no primeiro dia de trabalho ganhou escala e passou a influenciar a maneira como a empresa desenvolve seus líderes.</p></div>
+          </div>
+        </li>
+        <li class="imprensa-card hist-card">
+          <div class="hist-box">
+            <figure class="hist-photo">
+              <!-- FOTO 10: trocar o bloco hist-ph por <img src="..." alt="Raquel Nicolau" loading="lazy"> -->
+              <div class="hist-ph" aria-hidden="true">RN</div>
+            </figure>
+            <div class="hist-who"><span class="hist-name">Raquel Nicolau</span><span class="hist-area">Tech/Faster</span></div>
+            <h3 class="hist-title">Ela foi contratada grávida. Cinco anos depois, fez a mesma escolha por outra mulher.</h3>
+            <p class="hist-teaser">No fim de 2020, Raquel recebeu uma mensagem de uma recrutadora do iFood convidando-a para participar de um processo seletivo. Estava grávida de quase oito meses e, por isso, recusou o convite.</p>
+            <button class="hist-read" type="button" aria-haspopup="dialog">Ler história completa<span class="sr-only"> de Raquel Nicolau</span></button>
+            <div class="hist-full" hidden><p>No fim de 2020, Raquel recebeu uma mensagem de uma recrutadora do iFood convidando-a para participar de um processo seletivo. Estava grávida de quase oito meses e, por isso, recusou o convite.</p><p>A recrutadora respondeu que a gravidez não era um impedimento e insistiu para que conversassem.</p><p>Raquel participou das entrevistas e recebeu uma proposta para assumir a gestão de um time de engenharia. Ainda surpresa, perguntou se todos se lembravam de que ela estava grávida e sairia de licença poucos meses depois.</p><p>Foi contratada. Entrou, estruturou o time, entregou o planejamento e saiu de licença-maternidade. Quando voltou, encontrou apoio para se adaptar à empresa e à nova rotina como mãe, além de participar de um programa de aceleração de carreira.</p><p>Cinco anos depois, Raquel viveu a situação do outro lado: contratou uma gestora que também estava grávida e insegura durante o processo seletivo.</p><p>A oportunidade que recebeu passou a fazer parte da maneira como ela própria exerce a liderança.</p></div>
+          </div>
+        </li>
+      </ul>
+      <div class="imprensa-controls">
+        <div class="imprensa-progress" aria-hidden="true"><span class="imprensa-bar"></span></div>
+        <div class="imprensa-nav">
+          <button class="imprensa-btn imprensa-prev" type="button" aria-label="Histórias anteriores">&larr;</button>
+          <button class="imprensa-btn imprensa-next" type="button" aria-label="Próximas histórias">&rarr;</button>
         </div>
-      </li>
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 02: trocar o bloco hist-ph por <img src="..." alt="Cínthia Galvão" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">CG</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Cínthia Galvão</span><span class="hist-area">Tech/Logística</span></div>
-        <h3 class="hist-title">A primeira mulher promovida à liderança foi um marco</h3>
-        <div class="hist-text">
-          <p>Quando Cínthia chegou ao iFood, em 2019, não havia mulheres na liderança de engenharia da área em que começou a trabalhar.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>Algum tempo depois, decidiu fazer algo para mudar aquele cenário. Passou a estudar os desafios enfrentados por mulheres na tecnologia, aprofundou-se em temas como síndrome da impostora e começou a mentorar desenvolvedoras que queriam assumir posições de liderança.</p><p>Também levou essas discussões para encontros internos. Mas foi a promoção da primeira profissional que acompanhou que marcou sua trajetória.</p><p>Hoje, ao ver mais mulheres em posições de liderança e iniciativas como o Elas são Tech, Cínthia reconhece o avanço de um movimento do qual decidiu participar ativamente. Uma transformação que começou com pessoas ajudando outras pessoas a crescer.</p>
-          </details>
-        </div>
-      </li>
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 03: trocar o bloco hist-ph por <img src="..." alt="Fernanda Souza" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">FS</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Fernanda Souza</span><span class="hist-area">Ads</span></div>
-        <h3 class="hist-title">O projeto acabou. A oportunidade de continuar fez toda a diferença.</h3>
-        <div class="hist-text">
-          <p>Fernanda entrou no iFood em 2019, como atendente do Loop. Vinha de uma trajetória profissional no atendimento e nunca havia imaginado trabalhar com marketing.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>Quando o Loop foi encerrado, em plena pandemia, surgiu a possibilidade de participar de processos seletivos internos. Ela tentou outras áreas, recebeu respostas negativas e, quando seu desligamento já estava previsto, conseguiu uma vaga temporária no marketing do iFood Shop.</p><p>Precisou aprender praticamente tudo do zero. A oportunidade temporária foi estendida e, em março de 2021, recebeu a notícia da efetivação. Vieram promoções, novos desafios e, anos depois, outra mudança: com o encerramento do negócio em que trabalhava, passou por mais um processo seletivo interno e chegou à área de Ads.</p><p>Ao longo dessa trajetória, concluiu dois cursos superiores, conquistou seu apartamento e pôde continuar ajudando a mãe.</p><p>Para Fernanda, as oportunidades de recomeçar dentro da empresa mudaram também o que ela passou a considerar possível para a própria vida.</p>
-          </details>
-        </div>
-      </li>
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 04: trocar o bloco hist-ph por <img src="..." alt="Filipe Panceri" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">FP</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Filipe Panceri</span><span class="hist-area">iFood Pago</span></div>
-        <h3 class="hist-title">Ele não entendia de meios de pagamento. Recebeu o desafio mesmo assim.</h3>
-        <div class="hist-text">
-          <p>Em 2023, dois dias antes de sair de férias, Filipe recebeu um novo desafio de seu líder: ajudar a construir uma solução de pagamentos para o iFood.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>Filipe não conhecia aquele mercado e deixou isso claro. Mas o líder queria justamente alguém que pudesse olhar para o problema sem ideias preconcebidas.</p><p>A equipe começou com seis ou sete pessoas, testando a solução no restaurante da mãe de uma colega. Todos participavam de tudo: acompanhavam transações, realizavam repasses manualmente e conversavam com clientes para entender o que funcionava e o que precisava melhorar.</p><p>A solução começou a ser testada em um restaurante. Depois, chegou a três, dez e, ao fim do primeiro ciclo, já estava presente em quase cem estabelecimentos. Essa experiência ajudou a construir a Maquinona.</p><p>Hoje, Filipe sente uma satisfação especial quando encontra o produto em funcionamento e pode mostrar às filhas algo que ajudou a criar.</p><p>Tudo começou com a confiança para assumir um desafio em um mercado que ele ainda precisava conhecer.</p>
-          </details>
-        </div>
-      </li>
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 05: trocar o bloco hist-ph por <img src="..." alt="Iara Barros" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">IB</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Iara Barros</span><span class="hist-area">Novos Negócios</span></div>
-        <h3 class="hist-title">Seis anos depois, uma restauranteira ainda usava o que havia aprendido</h3>
-        <div class="hist-text">
-          <p>Em julho de 2025, Iara recebeu uma mensagem inesperada de uma restauranteira. A parceira havia encontrado e-mails antigos e queria agradecer pelas orientações recebidas no início de sua operação.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>O restaurante tinha mudado de uma hamburgueria para um negócio focado em refeições, mas continuava usando os ensinamentos daquela época.</p><p>Curiosa, Iara procurou os registros e descobriu que a consultoria havia acontecido em 2019, seu primeiro ano no iFood, quando ela própria ainda estava aprendendo.</p><p>A mensagem reforçou algo que sempre procurou fazer nas conversas com parceiros: explicar os motivos por trás de cada orientação, para que o conhecimento pudesse ser adaptado a novas situações.</p><p>Seis anos depois, ela descobriu que uma conversa aparentemente comum continuava ajudando alguém a tocar seu negócio. Foi um dos retornos mais significativos que recebeu sobre seu trabalho.</p>
-          </details>
-        </div>
-      </li>
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 06: trocar o bloco hist-ph por <img src="..." alt="Jennifer Siqueira" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">JS</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Jennifer Siqueira</span><span class="hist-area">Comercial</span></div>
-        <h3 class="hist-title">No começo, ela precisava convencer os restaurantes a não desligarem a maquininha</h3>
-        <div class="hist-text">
-          <p>Quando Jennifer entrou no iFood, em 2012, pedir comida pela internet ainda era uma novidade para muitos restaurantes de Recife.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>Os estabelecimentos recebiam os pedidos por uma maquininha que precisava permanecer ligada. O problema é que alguns proprietários não acreditavam que os pedidos digitais realmente chegariam e desligavam o equipamento da tomada.</p><p>Jennifer visitava os parceiros, conversava, explicava como funcionava e, muitas vezes, ela mesma ligava a maquininha.</p><p>Mais tarde, participou da expansão do iFood para novas cidades. Em Fortaleza, encontrou uma solução prática para acelerar o trabalho: contratou um motoboy que conhecia os restaurantes e seus proprietários para ajudá-la a chegar às pessoas certas.</p><p>Jennifer acompanhou uma transformação que exigiu muito mais do que tecnologia. Foi preciso conquistar a confiança dos parceiros, um restaurante de cada vez.</p>
-          </details>
-        </div>
-      </li>
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 07: trocar o bloco hist-ph por <img src="..." alt="Lívia Ribeiro" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">LR</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Lívia Ribeiro</span><span class="hist-area">Impacto &amp; Sustentabilidade</span></div>
-        <h3 class="hist-title">Na primeira semana, o líder perguntou quais eram suas metas pessoais</h3>
-        <div class="hist-text">
-          <p>Lívia chegou ao iFood em dezembro de 2021, depois de uma experiência profissional desgastante. Estava cansada e havia decidido que, no novo emprego, evitaria assumir grandes projetos.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>Mas, logo na primeira semana, participou com seu time de uma conversa para construir o PTO, o acordo de trabalho da equipe.</p><p>A primeira pergunta do líder não foi sobre metas corporativas. Ele queria saber quais eram as metas pessoais de cada um.</p><p>Aquela conversa marcou Lívia. Encontrou um ambiente de confiança, autonomia e respeito à vida pessoal que a fez recuperar o entusiasmo pelo trabalho.</p><p>Na operação logística, essa confiança também a levou para além dos indicadores. Em Brasília, participou da inauguração de um hub e de ações com entregadores. Em Goiânia, coordenou uma campanha de vacinação.</p><p>Ao conhecer de perto as pessoas por trás dos números, ampliou sua compreensão do negócio.</p><p>Uma experiência que começou com um acordo de trabalho e se fortaleceu na autonomia para assumir responsabilidades e viver a operação de perto.</p>
-          </details>
-        </div>
-      </li>
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 08: trocar o bloco hist-ph por <img src="..." alt="Luis Jorge" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">LJ</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Luis Jorge</span><span class="hist-area">Fraud Prevention</span></div>
-        <h3 class="hist-title">A operação estava em crise. Ninguém começou procurando um culpado.</h3>
-        <div class="hist-text">
-          <p>Era uma sexta-feira de março, às vésperas de um fim de semana importante para a operação logística. Uma falha externa na engenharia de dados havia comprometido as informações utilizadas para configurar rotas de um grande parceiro, provocando atrasos e custos maiores.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>Luis havia acabado de entrar no iFood como analista júnior. Quando foi convocado para uma reunião de crise, imaginou que encontraria cobranças duras e uma busca por responsáveis.</p><p>Aconteceu o contrário.</p><p>A equipe se concentrou em entender a falha e encontrar uma maneira de manter a operação funcionando. O colega responsável pelas planilhas, longe de ser afastado da discussão, assumiu um papel central na solução.</p><p>Naquela noite, conseguiram recuperar uma configuração anterior que permitiu conter os danos. Na segunda-feira, começaram a trabalhar na automatização daquele processo manual para reduzir sua vulnerabilidade.</p><p>Para Luis, aquela sexta-feira foi decisiva. Ele percebeu que poderia expor problemas com transparência, assumir responsabilidades e aprender com os erros sem receio de ser humilhado. Foi naquele momento que teve certeza de estar no lugar certo.</p>
-          </details>
-        </div>
-      </li>
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 09: trocar o bloco hist-ph por <img src="..." alt="Marina Ceriliani" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">MC</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Marina Ceriliani</span><span class="hist-area">People</span></div>
-        <h3 class="hist-title">No primeiro dia, recebeu um livro e um desafio</h3>
-        <div class="hist-text">
-          <p>Em junho de 2022, no dia em que começou a trabalhar no iFood, Marina recebeu da gestora um exemplar de <em>Care to Dare</em>, indicado pelo cliente que sua equipe atenderia. Junto com o livro, veio um desafio: pensar como seus conceitos poderiam ser aplicados na prática.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>Ela levou a proposta adiante. Ao longo do ano seguinte, trabalhou em parceria com as equipes de People, Tech e gestores para transformar aquelas ideias em uma proposta de desenvolvimento de líderes.</p><p>O trabalho começou nas áreas de Finanças e Jurídico, onde houve melhorias nas avaliações de liderança. Depois de consolidada, a iniciativa foi ampliada para o iFood e contribuiu para a construção das definições do Líder iFood.</p><p>O que começou com um desafio no primeiro dia de trabalho ganhou escala e passou a influenciar a maneira como a empresa desenvolve seus líderes.</p>
-          </details>
-        </div>
-      </li>
-      <li class="hist-card reveal">
-        <figure class="hist-photo">
-          <!-- FOTO 10: trocar o bloco hist-ph por <img src="..." alt="Raquel Nicolau" loading="lazy"> -->
-          <div class="hist-ph" aria-hidden="true">RN</div>
-        </figure>
-        <div class="hist-who"><span class="hist-name">Raquel Nicolau</span><span class="hist-area">Tech/Faster</span></div>
-        <h3 class="hist-title">Ela foi contratada grávida. Cinco anos depois, fez a mesma escolha por outra mulher.</h3>
-        <div class="hist-text">
-          <p>No fim de 2020, Raquel recebeu uma mensagem de uma recrutadora do iFood convidando-a para participar de um processo seletivo. Estava grávida de quase oito meses e, por isso, recusou o convite.</p>
-          <details class="hist-more">
-            <summary><span class="hist-open">Ler história completa</span><span class="hist-close">Fechar história</span></summary>
-            <p>A recrutadora respondeu que a gravidez não era um impedimento e insistiu para que conversassem.</p><p>Raquel participou das entrevistas e recebeu uma proposta para assumir a gestão de um time de engenharia. Ainda surpresa, perguntou se todos se lembravam de que ela estava grávida e sairia de licença poucos meses depois.</p><p>Foi contratada. Entrou, estruturou o time, entregou o planejamento e saiu de licença-maternidade. Quando voltou, encontrou apoio para se adaptar à empresa e à nova rotina como mãe, além de participar de um programa de aceleração de carreira.</p><p>Cinco anos depois, Raquel viveu a situação do outro lado: contratou uma gestora que também estava grávida e insegura durante o processo seletivo.</p><p>A oportunidade que recebeu passou a fazer parte da maneira como ela própria exerce a liderança.</p>
-          </details>
-        </div>
-      </li>
-    </ul>
-    <!-- Em aprovação (nao publicar ate liberacao): 11. Vinicius Araujo, EB.
-         "Duas mensagens ajudaram a confirmar uma decisao de carreira". Foto sera enviada. -->
+      </div>
+    </div>
+    <!-- História 11, Vinicius Araújo (EB): fora desta publicação. -->
   </div>
 </section>
 
@@ -1905,6 +1869,16 @@ footer .footer-link:hover{color:var(--white);}
 </footer>
 
 
+<div class="modal-overlay legal-modal" id="storyModal" aria-hidden="true" inert>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="storyTitle">
+    <button class="modal-close" type="button" data-close-story aria-label="Fechar">&times;</button>
+    <div class="eyebrow section-eyebrow" id="storyArea"></div>
+    <h2 id="storyTitle" class="modal-title"></h2>
+    <p class="story-name" id="storyName"></p>
+    <div class="legal-body story-body" id="storyBody"></div>
+  </div>
+</div>
+
 <div class="modal-overlay legal-modal" id="privacyModal" aria-hidden="true" inert>
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
     <button class="modal-close" type="button" data-close-legal aria-label="Fechar">&times;</button>
@@ -1987,6 +1961,34 @@ footer .footer-link:hover{color:var(--white);}
     window.addEventListener('resize', update);
     update();
   });
+  (function(){
+    var m = document.getElementById('storyModal');
+    if(!m) return;
+    var last = null;
+    function open(card){
+      last = document.activeElement;
+      document.getElementById('storyArea').textContent = card.querySelector('.hist-area').textContent;
+      document.getElementById('storyTitle').textContent = card.querySelector('.hist-title').textContent;
+      document.getElementById('storyName').textContent = card.querySelector('.hist-name').textContent;
+      var body = document.getElementById('storyBody');
+      body.innerHTML = card.querySelector('.hist-full').innerHTML;
+      body.scrollTop = 0;
+      m.classList.add('is-open'); m.removeAttribute('inert'); m.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+      m.querySelector('[data-close-story]').focus();
+    }
+    function close(){
+      m.classList.remove('is-open'); m.setAttribute('inert',''); m.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      if(last && last.focus){ last.focus(); }
+    }
+    document.querySelectorAll('.hist-read').forEach(function(btn){
+      btn.addEventListener('click', function(){ open(btn.closest('.hist-card')); });
+    });
+    m.querySelector('[data-close-story]').addEventListener('click', close);
+    m.addEventListener('click', function(e){ if(e.target === m){ close(); } });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && m.classList.contains('is-open')){ close(); } });
+  })();
   var newsletterForm = document.getElementById('newsletterForm');
   if(newsletterForm){
     newsletterForm.addEventListener('submit', function(e){
